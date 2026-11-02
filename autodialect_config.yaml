@@ -1,0 +1,26 @@
+agents:
+  autodialect_agent:
+    enable_memory: false
+    model: online_model
+    max_steps: 50
+    tools:
+      - bash
+      - str_replace_based_edit_tool
+      - sequentialthinking
+      - task_done
+
+model_providers:
+  online_provider:
+    api_key: os.environ/AUTODIALECT_API_KEY
+    provider: openai_compatible
+    base_url: os.environ/AUTODIALECT_BASE_URL
+
+models:
+  online_model:
+    model_provider: online_provider
+    model: os.environ/AUTODIALECT_MODEL
+    max_tokens: 8192
+    temperature: 0
+    top_p: 1
+    max_retries: 5
+    parallel_tool_calls: false

@@ -1,0 +1,6 @@
+openai>=1.86.0
+pyyaml>=6.0.2
+rich>=13.0.0
+tqdm>=4.66.0
+# Optional only when runtime memory is enabled:
+# letta-client
